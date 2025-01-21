@@ -32,7 +32,7 @@ print(thislist)
 thislist = ["banana", "Orange", "Kiwi", "cherry"]
 thislist.reverse()
 print(thislist)
-Three methods of copying:
+#Three methods of copying:
 thislist = ["apple", "banana", "cherry"]
 mylist = thislist.copy()
 print(mylist)
