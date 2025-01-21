@@ -1,17 +1,15 @@
-thislist = ["apple", "banana", "cherry"]
-for x in thislist:
-  print(x)
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 
-thislist = ["apple", "banana", "cherry"]
-for i in range(len(thislist)):
-  print(thislist[i])
-#Looping through a while
-thislist = ["apple", "banana", "cherry"]
-i = 0
-while i < len(thislist):
-  print(thislist[i])
-  i = i + 1
+new_list = [x for x in fruits if x != 'apple']
+print(new_list)
+#List comprehension 
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 
-#looping through a list comprehension 
-thislist = ["apple", "banana", "cherry"]
-[print(x) for x in thislist]
+newlist = [x for x in fruits if "a" in x]
+
+print(newlist) 
+#setting conditions in list comprehension
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x if x != "banana" else "orange" for x in fruits]
+print(newlist)
+
