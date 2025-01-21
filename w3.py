@@ -1,84 +1,93 @@
-#tuples can have elements with the same value 
-thistuple = ("apple", "banana", "cherry", "apple", "cherry")
-print(thistuple)
-thistuple = ("apple", "banana", "cherry")
-print(len(thistuple))
+#You cannot change values of a set, but you can add new ones
+thisset = {"apple", "banana", "cherry"}
 
-thistuple = ("apple",)
-print(type(thistuple))
+thisset.add("orange")
 
-#NOT a tuple
-thistuple = ("apple")
-print(type(thistuple))
+print(thisset)
 
-tuple1 = ("apple", "banana", "cherry")
-tuple2 = (1, 5, 7, 9, 3)
-tuple3 = (True, False, False)
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
 
-tuple1 = ("abc", 34, True, 40, "male") #different data types
+thisset.update(tropical)
 
-#Accessing tuple items
-thistuple = ("apple", "banana", "cherry")
-print(thistuple[1])
+print(thisset)
 
-thistuple = ("apple", "banana", "cherry")
-print(thistuple[-1])
+thisset = {"apple", "banana", "cherry"}
+mylist = ["kiwi", "orange"]
 
-#thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
-print(thistuple[2:5])
+thisset.update(mylist)
 
-thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
-print(thistuple[:4])
-#
-thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
-print(thistuple[2:])
-#
-thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
-print(thistuple[-4:-1])
-#Adding items
-thistuple = ("apple", "banana", "cherry")
-y = list(thistuple)
-y.append("orange")
-thistuple = tuple(y)
-#Another way
-thistuple = ("apple", "banana", "cherry")
-y = ("orange",)
-thistuple += y
+print(thisset)
 
-print(thistuple)
-#Removing
-thistuple = ("apple", "banana", "cherry")
-y = list(thistuple)
-y.remove("apple")
-thistuple = tuple(y)
+thisset = {"apple", "banana", "cherry"}
 
-thistuple = ("apple", "banana", "cherry")
-del thistuple
-print(thistuple) #this will raise an error because the tuple no longer exists
-#Unpacking 
-fruits = ("apple", "banana", "cherry")
+thisset.remove("banana")
 
-(green, yellow, red) = fruits
+print(thisset)
 
-print(green)
-print(yellow)
-print(red)
+thisset = {"apple", "banana", "cherry"}
 
-fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+thisset.discard("banana")
 
-(green, yellow, *red) = fruits
+print(thisset)
 
-print(green)
-print(yellow)
-print(red)
+thisset = {"apple", "banana", "cherry"}
 
-tuple1 = ("a", "b" , "c")
-tuple2 = (1, 2, 3)
+x = thisset.pop()
 
-tuple3 = tuple1 + tuple2
-print(tuple3)
+print(x)
 
-fruits = ("apple", "banana", "cherry")
-mytuple = fruits * 2
+print(thisset)
 
-print(mytuple)
+thisset = {"apple", "banana", "cherry"}
+
+thisset.clear()
+
+print(thisset)
+
+thisset = {"apple", "banana", "cherry"}
+
+del thisset
+
+print(thisset)
+
+
+#Sets joining 
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+
+set3 = set1.union(set2)
+print(set3)
+#Using | as the union thing (the're just the same)
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+
+set3 = set1 | set2
+print(set3)
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+
+set3 = set1.intersection(set2)
+print(set3)
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+
+set1.intersection_update(set2)
+
+print(set1)
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+
+set3 = set1.difference(set2)
+
+print(set3)
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+
+set3 = set1.symmetric_difference(set2)
+
+print(set3)
