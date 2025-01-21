@@ -1,93 +1,103 @@
-#You cannot change values of a set, but you can add new ones
-thisset = {"apple", "banana", "cherry"}
+#Accessing the dict's items
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"]
 
-thisset.add("orange")
+x = thisdict.keys() #return a list of all keys
 
-print(thisset)
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
 
-thisset = {"apple", "banana", "cherry"}
-tropical = {"pineapple", "mango", "papaya"}
+x = car.values()
 
-thisset.update(tropical)
+print(x) #before the change
 
-print(thisset)
+car["color"] = "red"
 
-thisset = {"apple", "banana", "cherry"}
-mylist = ["kiwi", "orange"]
+print(x) #after the change
 
-thisset.update(mylist)
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "model" in thisdict:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
 
-print(thisset)
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 2020})
+#Deleting
 
-thisset = {"apple", "banana", "cherry"}
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+print(thisdict)
 
-thisset.remove("banana")
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.popitem()
+print(thisdict)
 
-print(thisset)
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict["model"]
+print(thisdict)
 
-thisset = {"apple", "banana", "cherry"}
+for x in thisdict.keys():
+  print(x) 
 
-thisset.discard("banana")
+for x, y in thisdict.items():
+  print(x, y)
 
-print(thisset)
+for x in thisdict.values():
+  print(x)
 
-thisset = {"apple", "banana", "cherry"}
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = thisdict.copy()
+print(mydict)
 
-x = thisset.pop()
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+} #Nested dictionairies 
 
-print(x)
+print(myfamily["child2"]["name"])
 
-print(thisset)
+for x, obj in myfamily.items():
+  print(x)
 
-thisset = {"apple", "banana", "cherry"}
-
-thisset.clear()
-
-print(thisset)
-
-thisset = {"apple", "banana", "cherry"}
-
-del thisset
-
-print(thisset)
-
-
-#Sets joining 
-set1 = {"a", "b", "c"}
-set2 = {1, 2, 3}
-
-set3 = set1.union(set2)
-print(set3)
-#Using | as the union thing (the're just the same)
-set1 = {"a", "b", "c"}
-set2 = {1, 2, 3}
-
-set3 = set1 | set2
-print(set3)
-
-set1 = {"apple", "banana", "cherry"}
-set2 = {"google", "microsoft", "apple"}
-
-set3 = set1.intersection(set2)
-print(set3)
-
-set1 = {"apple", "banana", "cherry"}
-set2 = {"google", "microsoft", "apple"}
-
-set1.intersection_update(set2)
-
-print(set1)
-
-set1 = {"apple", "banana", "cherry"}
-set2 = {"google", "microsoft", "apple"}
-
-set3 = set1.difference(set2)
-
-print(set3)
-
-set1 = {"apple", "banana", "cherry"}
-set2 = {"google", "microsoft", "apple"}
-
-set3 = set1.symmetric_difference(set2)
-
-print(set3)
+  for y in obj:
+    print(y + ':', obj[y])
